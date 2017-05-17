@@ -1,0 +1,10 @@
+[ignore]
+./node_modules/graphql/validation/rules/ArgumentsOfCorrectType.js.flow
+./node_modules/graphql/validation/rules/DefaultValuesOfCorrectType.js.flow
+
+
+[include]
+
+[libs]
+
+[options]
