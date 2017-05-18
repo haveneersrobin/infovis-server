@@ -18,4 +18,7 @@ const format = (req, res, next) => {
 router.get('/interval/:start/:end', format, FlightController.fetchFlights);
 router.get('/details/:id/:start/:end', format, FlightController.fetchFlight);
 
+router.get('/mindate', (req, res) => FlightController.fetchMin(req, res));
+router.get('/maxdate', (req, res) => FlightController.fetchMax(req, res));
+
 module.exports = router;

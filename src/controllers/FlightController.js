@@ -32,3 +32,26 @@ exports.fetchFlight = (req: any, res: any) => {
   })
   .catch(error => res.send(error));
 };
+
+exports.fetchMin = (req: any, res: any) => {
+  Flight.findOne()
+  .sort({ start: +1 })
+  .then((flight) => {
+    res.json({
+      min_start: flight.start,
+    });
+  })
+  .catch(error => res.send(error));
+};
+
+
+exports.fetchMax = (req: any, res: any) => {
+  Flight.findOne()
+  .sort({ end: -1 })
+  .then((flight) => {
+    res.json({
+      max_end: flight.end,
+    });
+  })
+  .catch(error => res.send(error));
+};
